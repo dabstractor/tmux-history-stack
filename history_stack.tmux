@@ -9,6 +9,12 @@ CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Source helpers
 source "$CURRENT_DIR/scripts/helpers.sh"
 
+# Set up command shortcuts - allows simple keybinds without hardcoded paths
+tmux set-option -g @history-stack-back "$CURRENT_DIR/scripts/back.sh"
+tmux set-option -g @history-stack-forward "$CURRENT_DIR/scripts/forward.sh"
+tmux set-option -g @history-stack-push "$CURRENT_DIR/scripts/push.sh"
+tmux set-option -g @history-stack-clear "$CURRENT_DIR/scripts/clear.sh"
+
 # Initialize the plugin
 main() {
     # Initialize indicator variable

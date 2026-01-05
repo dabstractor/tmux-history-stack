@@ -18,8 +18,8 @@ Add key bindings in `tmux.conf`:
 
 ```bash
 # Navigate backward/forward in history
-bind-key h run-shell '~/.config/tmux/plugins/tmux-history-stack/scripts/back.sh'
-bind-key l run-shell '~/.config/tmux/plugins/tmux-history-stack/scripts/forward.sh'
+bind-key h run-shell '#{@history-stack-back}'
+bind-key l run-shell '#{@history-stack-forward}'
 ```
 
 Add the indicator to your statusline:
@@ -42,10 +42,10 @@ The `◀` appears when you have history to go back to. `▶` appears when you've
 
 | Command | Description |
 |---------|-------------|
-| `scripts/back.sh` | Navigate backward in history |
-| `scripts/forward.sh` | Navigate forward in history |
-| `scripts/push.sh [manual\|auto]` | Push current location (auto skips duplicates) |
-| `scripts/clear.sh` | Clear history stack |
+| `#{@history-stack-back}` | Navigate backward in history |
+| `#{@history-stack-forward}` | Navigate forward in history |
+| `#{@history-stack-push}` | Push current location to history |
+| `#{@history-stack-clear}` | Clear history stack |
 
 ## Configuration
 
